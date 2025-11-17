@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    background-color: thistle;
+    font-family: Arial, sans-serif;
+}
+
+.main_box {
+    width: 400px;
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+}
+
+.main_box h2 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.card {
+    background-color: white;
+    padding: 25px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px lightgray;
+}
+
+.card p {
+    font-size: 18px;
+    margin: 0;
+    color: gray;
+}
+
+.card h1 {
+    font-size: 35px;
+    margin-top: 15px;
+    font-weight: bold;
+}
