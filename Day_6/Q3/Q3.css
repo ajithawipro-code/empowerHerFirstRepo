@@ -1,0 +1,76 @@
+.master_container{
+    width: 500px;
+    padding: 20px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    margin: 30px auto;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+    font-family: Arial, sans-serif;
+}
+
+.product_img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+h3{
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+p{
+    color: gray;
+    margin: 5px 0;
+}
+
+.rating_row, .price_row{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.rating{
+    background: #28a745;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.badge{
+    width: 70px;
+}
+
+.current_price{
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.old_price{
+    color: gray;
+}
+
+.discount{
+    color: green;
+    font-weight: bold;
+}
+
+.offer{
+    color: green;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.btn{
+    width: 100%;
+    background: red;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 18px;
+    margin-top: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
