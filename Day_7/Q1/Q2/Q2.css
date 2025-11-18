@@ -1,0 +1,36 @@
+.schedule{
+    display: grid;
+    grid-template-columns: 120px repeat(5, 1fr);
+    gap: 8px;
+    width: 90%;
+    margin: 20px auto;
+}
+
+.cell{
+    padding: 10px;
+    text-align: center;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.day{
+    background-color: lightgray;
+}
+
+.time{
+    background-color: lightblue;
+}
+
+.pink{
+    background-color: pink;
+}
+
+.yellow{
+    background-color: lightyellow;
+}
+
+.note{
+    background-color: lightblue;
+    text-align: left;
+    padding-left: 20px;
+}
