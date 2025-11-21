@@ -19,10 +19,9 @@ const user={name:"Alice",
             }
 };
 
-const res={...user};
-console.log(res);
-const res1={...res.address};
-console.log(res.name);
-console.log(res1.city);
-console.log(res1.pin);
+const{name:Name,age:Age,address:{city:City,pin:Pin}}=user;
+console.log(`Name: ${Name}`);
+console.log(`City: ${City}`);
+console.log(`Pin: ${Pin}`);
+
 
