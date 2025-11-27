@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Q14
+</body>
+<script>
+    // the code runs in below order
+   // Begin
+   // End
+   // Promise Task
+   // Timeout Task 
+  // Reason is Begin and End are synchronous codes which immediately prints, then it is followed by Promise Task as it goes to microtask queue and
+  // then at last Timeout Task gets printed because it goes to the macrotask queue.
+
+    console.log("Begin"); 
+    setTimeout(() => {
+         console.log("Timeout Task"); 
+         }, 0);
+          Promise.resolve()
+          .then(() => {
+             console.log("Promise Task");
+              });
+               console.log("End");
+</script>
+</html>
