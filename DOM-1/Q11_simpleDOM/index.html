@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NavigatingDOM</title>
+</head>
+<body>
+    <div class="container">
+    <h1 id="h1tagid">Welcome to JavaScript!</h1>
+    <p>The DOM is a bridge between HTML and JavaScript, allowing code to interact with the webpage.</p>
+    <p>It represents every element as an object, so we can select, update, create, or delete content dynamically.</p>
+    <p>Through events like clicks, inputs, and changes, the DOM helps pages respond to user actions.</p>
+    <p>DOM manipulation is what transforms a static webpage into an interactive and functional experience.</p>
+    </div>
+</body>
+<script>
+    let h1_tag=document.getElementById("h1tagid");
+    h1_tag.textContent="Welcome to DOM World!";
+    let p_list=document.getElementsByTagName("p");
+       for(let i=0;i<p_list.length;i++)
+       { 
+        p_list[i].style.color="blue";
+       }
+    let container=document.querySelector(".container");
+    console.log(container);
+    container.style.backgroundColor="yellow";
+
+
+</script>
+</html>
