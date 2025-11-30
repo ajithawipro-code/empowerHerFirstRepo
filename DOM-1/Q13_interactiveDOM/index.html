@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive DOM</title>
+</head>
+<body>
+    <input type="text" id="name" placeholder="Enter color"><br><br>
+    <input type="text" id="content" placeholder="Enter content"><br><br>
+    <button id="btn">Change Background</button><br><br>
+    <button id="btn1">Update Text</button><br><br>
+    <div id="container">
+       <p>DOM - Document Object Model</p>
+    </div>
+</body>
+<script>
+    let bg_button=document.getElementById("btn");
+    bg_button.addEventListener('click',()=>{
+    let color_name=document.getElementById("name").value;
+    console.log(color_name);
+    if(color_name!="")
+    {    
+      let container=document.getElementById("container");
+      container.style.backgroundColor=color_name;
+    }
+    else
+    {
+        alert("Invalid color name!");
+    }
+    });
+
+    let button1=document.getElementById("btn1");
+    button1.addEventListener('click',()=>{
+        updatetext=document.getElementById("content").value;
+        if(updatetext!="")
+    {
+         let container=document.getElementById("container");
+         container.textContent=updatetext;
+    }
+    else{
+        alert("Please enter valid text");
+    }
+    })
+</script>
+</html>
