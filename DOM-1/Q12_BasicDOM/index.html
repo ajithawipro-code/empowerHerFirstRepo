@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BasicDOM</title>
+</head>
+<body>
+    <ul class="Fruits">
+        <li>Apple</li>
+        <li>Mango</li>
+        <li>Orange</li>
+    </ul>
+    <button id="btn">Add Item</button>
+</body>
+<script>
+        
+       
+    let btn_id=document.getElementById("btn");
+    btn_id.addEventListener('click',()=>{
+        let ul_tag=document.querySelector(".Fruits");
+        let new_li=document.createElement("li");
+        new_li.textContent="Banana";
+        ul_tag.appendChild(new_li); 
+           applyColors();  
+        
+    })
+       applyColors();
+  
+    function applyColors(){     
+        let li_items=document.querySelectorAll(".Fruits li");
+  
+   for(let i=0;li_items.length;i++)
+   {
+    if(i%2!=0)
+   {
+      li_items[i].style.color="red";
+      li_items[i].style.fontStyle="italic";
+   }
+    else
+     {
+    li_items[i].style.color="blue";
+      li_items[i].style.fontWeight="bold";
+     }
+   }
+    }
+  
+    
+</script>
+</html>
