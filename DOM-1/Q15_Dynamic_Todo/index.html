@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dynamic To-do</title>
+<style>
+#container{
+    border:1px solid black;
+    padding:20px;
+    gap:10px;
+}
+.completed{
+    text-decoration: line-through;
+    color:gray;
+    }
+</style>
+</head>
+<body>
+<input type="text" id="task" placeholder="Enter task">
+<button id="btn">Add Task</button>
+<div id="container">
+<ul class="ul_class">
+<li>Cooking</li>
+<li>Washing</li>
+<li>Cleaning</li>
+</ul>
+</div>
+</body>
+<script>
+let button_id=document.getElementById("btn");
+button_id.addEventListener('click',()=>{
+let ul_tag=document.querySelector("ul");
+let new_li=document.createElement("li");
+let task=document.getElementById("task").value;
+if(task.trim()!==""){
+new_li.textContent=task+" ";
+let deletebtn=document.createElement("button");
+deletebtn.textContent="Delete";
+deletebtn.addEventListener('click',()=>{new_li.remove();});
+let completeBtn=document.createElement("button");
+completeBtn.textContent="Complete";
+completeBtn.addEventListener("click",()=>{new_li.classList.toggle("completed");});
+new_li.appendChild(deletebtn);
+new_li.appendChild(completeBtn);
+ul_tag.appendChild(new_li);
+}else{alert("Enter valid task");}
+});
+</script>
+</html>
