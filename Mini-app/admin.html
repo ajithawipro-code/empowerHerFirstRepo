@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<link rel="stylesheet" href="./styles/admin.css">
+</head>
+<body style="background-color: aquamarine;">
+<h1>Book Management Page</h1>
+<button id="btn1" onclick="window.location.href='index.html'">Go back to Homepage</button>
+<br><br>
+
+<form>
+<input id="title" type="text" placeholder="Title" required>
+<input id="author" type="text" placeholder="Author" required>
+
+<select id="category">
+<option value="Fiction">Fiction</option>
+<option value="Comedy">Comedy</option>
+<option value="Technical">Technical</option>
+</select>
+
+<button id="addbook">Add Book</button>
+
+<br><br>
+<button id="sortAZ">Sort A → Z</button>
+<button id="sortZA">Sort Z → A</button>
+
+<select id="filter">
+<option value="All">All</option>
+<option value="Fiction">Fiction</option>
+<option value="Comedy">Comedy</option>
+<option value="Technical">Technical</option>
+</select>
+</form>
+<div id="container"></div>
+<script src="./scripts/admin.js"></script>
+</body>
+</html>
