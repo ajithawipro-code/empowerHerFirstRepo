@@ -24,15 +24,15 @@ container.innerHTML="";
 for(let i=0;i<list.length;i++){
 let card=document.createElement("div");
 card.classList.add("card");
+if(list[i].title.trim()!=="" && list[i].author.trim()!=="")
+{
 card.innerHTML=`
 <p><b>Title:</b> ${list[i].title}</p>
 <p><b>Author:</b> ${list[i].author}</p>
 <p><b>Category:</b> ${list[i].category}</p>
 `;
-
 let deleteBtn=document.createElement("button");
 deleteBtn.textContent="Delete";
-
 deleteBtn.addEventListener("click",()=>{
 books.splice(books.indexOf(list[i]),1);
 displayBooks(); 
@@ -41,7 +41,14 @@ displayBooks();
 card.appendChild(deleteBtn);
 container.appendChild(card);
 }
+else{
+    alert("Enter valid text");
 }
+}
+}
+
+
+
 
 // SORT A-Z
 document.getElementById("sortAZ").addEventListener("click",()=>{
