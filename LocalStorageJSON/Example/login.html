@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+</head>
+<body>
+    <input id="username" placeholder="Enter the name"><br>
+    <input id="password" type="password" placeholder="Enter password"><br>
+    <button onclick="login()">Login</button>
+    <p id="msg"></p>
+</body>
+<script>
+    function login()
+    {
+        let user=document.getElementById("username").value;
+        let pass=document.getElementById("password").value;
+        if(user=="mini" && pass=="1234")
+   {
+    sessionStorage.setItem("loggedinUser",user);
+    sessionStorage.setItem("loggedPassword",pass);
+        window.location.href="dashboard.html";
+    }
+}
+</script>
+</html>

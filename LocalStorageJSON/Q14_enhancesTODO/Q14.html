@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EnhancedToDo</title>
+</head>
+<body>
+<h2>ToDo Tasks Page</h2>
+<input type="text" id="textID" placeholder="Enter task here">
+<button onclick="addTask()">Add_Task</button><br><br>
+<input type="text" id="searchID" placeholder="Enter search task">
+<button onclick="searchTask()">Search</button><br><br>
+<div id="tasklist"></div>
+</body>
+<script>
+let tasks=JSON.parse(localStorage.getItem("tasks"))||[];
+
+function save(){
+localStorage.setItem("tasks",JSON.stringify(tasks));
+}
+
+function addTask(){
+let text=document.getElementById("textID").value;
+if(text.trim()!==""){
+let task={id:Date.now(),curtask:text,completed:false};
+tasks.push(task);
+save();
+displayTask();
+document.getElementById("textID").value="";
+}else{alert("Enter valid task");}
+}
+
+function displayTask(){
+let list=document.getElementById("tasklist");
+list.innerHTML="";
+tasks.forEach((task,index)=>{
+let div=document.createElement("div");
+let p=document.createElement("p");
+p.textContent=task.curtask;
+if(task.completed){
+p.style.textDecoration="line-through";
+p.style.color="green";
+}
+p.addEventListener("click",()=>{
+task.completed=!task.completed;
+save();
+displayTask();
+});
+let delbtn=document.createElement("button");
+delbtn.textContent="Delete";
+delbtn.addEventListener("click",()=>{
+tasks.splice(index,1);
+save();
+displayTask();
+});
+div.appendChild(p);
+div.appendChild(delbtn);
+list.appendChild(div);
+})
+}
+
+function searchTask(){
+let search=document.getElementById("searchID").value.toLowerCase();
+let list=document.getElementById("tasklist");
+list.innerHTML="";
+tasks.filter(task=>task.curtask.toLowerCase().includes(search))
+.forEach(task=>{
+let div=document.createElement("div");
+let p=document.createElement("p");
+p.textContent=task.curtask;
+if(task.completed){
+p.style.textDecoration="line-through";
+p.style.color="green";
+}
+div.appendChild(p);
+list.appendChild(div);
+})
+}
+
+displayTask();
+</script>
+</html>

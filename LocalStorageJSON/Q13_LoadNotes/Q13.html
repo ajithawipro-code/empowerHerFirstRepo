@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes_Manager</title>
+</head>
+<body>
+    <h2>Notes Manager</h2>
+    <textarea id="textareaID" placeholder="Enter the text here"></textarea>
+    <br><br>
+    <button id="addbtn" onclick="addNote()">Add_Notes</button><br><br>
+    <button id="loadbtn" onclick="loadNote()">Load_Notes</button><br><br>
+    <button id="delbtn" onclick="clearNote()">Clear_Notes</button>
+    <div id="noteslist"></div>    
+</body>
+<script> 
+ let notes = JSON.parse(localStorage.getItem("notes")) || [];  
+
+    function save(){
+          localStorage.setItem("notes",JSON.stringify(notes));
+    }
+
+    function addNote(){
+        let text=document.getElementById("textareaID").value;
+        if(text.trim()!=="")
+    {
+        notes.push(text);
+        save();
+        //loadNote();   
+    }  
+    else{
+        alert("Please Enter Valid Text");
+    }
+    document.getElementById("textareaID").value="";
+        
+    }
+ function loadNote(){
+      let list=document.getElementById("noteslist");
+        list.innerHTML="";
+        notes.forEach((note,index)=>{
+       let div=document.createElement("div");
+        //div.classList.add("note");
+        let p=document.createElement("p");
+        p.textContent=note;  
+        div.appendChild(p);
+        list.appendChild(div);    
+        })  
+}
+
+      function clearNote(){
+       notes = [];
+        save();   
+        loadNote();
+        
+    }
+     
+
+ 
+
+
+
+
+</script>
+</html>
